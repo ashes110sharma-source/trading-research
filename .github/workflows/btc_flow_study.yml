@@ -1,0 +1,40 @@
+name: BTC flow study
+on:
+  workflow_dispatch:
+    inputs:
+      stage:
+        description: "dev = build stage. test = the one-time test (only works if dev qualified a setup)"
+        type: choice
+        options: [dev, test]
+        default: dev
+      start:
+        description: "First month to download (YYYY-MM)"
+        default: "2020-01"
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pandas numpy
+      - name: Offline self-checks
+        run: python btc_flow_study/test_offline.py
+      - name: Download from the Binance public archive
+        run: python btc_flow_study/fetch_binance_public.py --start "${{ inputs.start }}" --out btc_flow_study/data
+      - name: Run the study
+        run: python btc_flow_study/study_flow.py --data btc_flow_study/data --out btc_flow_study/results --stage "${{ inputs.stage }}"
+      - name: Save results to the repo
+        if: always()
+        run: |
+          mkdir -p btc_flow_study/results
+          cp btc_flow_study/data/fetch_report.txt btc_flow_study/results/ 2>/dev/null || true
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add -f btc_flow_study/results
+          git commit -m "BTC flow study: ${{ inputs.stage }} results" || echo "nothing to commit"
+          git push
