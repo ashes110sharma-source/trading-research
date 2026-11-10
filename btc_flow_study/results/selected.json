@@ -1,0 +1,8 @@
+{
+ "qualified": true,
+ "setup": "H5 retail crowd extreme, fade (top/bottom 3%)",
+ "hold_h": 8,
+ "net_t": 2.7,
+ "net_avg_pct": 0.1586,
+ "trades": 563
+}

@@ -1,0 +1,35 @@
+# BTC flow study - DEV stage
+
+Bars 2020-01-01 00:00:00 to 2024-12-31 23:55:00 (288 missing 5-min bars filled). Funding: yes. Open interest / long-short: yes, from 2020-09-01
+
+DEV window 2020-02-15 to 2025-01-01: 24 cells, 6 positive after costs.
+
+Best cell: H5 retail crowd extreme, fade (top/bottom 3%), hold 8h: 563 trades, net 0.1586% per trade, net t-stat 2.7, 11/18 quarters positive -> QUALIFIES for the one-time test
+
+```
+                                               setup  hold_h  trades  per_day  win_pct  gross_avg_pct  gross_t  net_avg_pct  net_t  net_sum_pct  max_dd_pct  quarters_pos  quarters
+       H5 retail crowd extreme, fade (top/bottom 3%)       8     563     0.36     44.9         0.2586      4.3       0.1586    2.7         89.3        18.3            11        18
+       H5 retail crowd extreme, fade (top/bottom 3%)       4     577     0.37     45.9         0.2310      4.6       0.1310    2.6         75.6        19.2            10        18
+      H5 retail crowd extreme, fade (top/bottom 10%)       8     897     0.57     44.8         0.1578      3.6       0.0578    1.3         51.8        28.7            11        18
+         H3 breakout with rising OI, follow (OI +1%)       8     906     0.57     42.6         0.1279      2.4       0.0279    0.5         25.3        44.1             9        18
+      H5 retail crowd extreme, fade (top/bottom 10%)       4     918     0.59     44.0         0.1179      3.2       0.0179    0.5         16.4        43.0             9        18
+        H4 taker flow absorbed, fade (top/bottom 2%)       8      99     0.06     42.4         0.1670      1.1       0.0670    0.4          6.6        10.3             8        20
+            H2 funding extreme, fade (top/bottom 5%)       4     484     0.28     42.4         0.0966      2.0      -0.0034   -0.1         -1.6        51.0            10        20
+            H2 funding extreme, fade (top/bottom 5%)       8     476     0.27     39.3         0.0734      1.2      -0.0266   -0.4        -12.7        55.6             6        20
+         H3 breakout with rising OI, follow (OI +1%)       4     920     0.58     40.9         0.0795      1.8      -0.0205   -0.5        -18.8        59.1            10        18
+           H2 funding extreme, fade (top/bottom 10%)       8     915     0.52     40.2         0.0678      1.5      -0.0322   -0.7        -29.5        79.4             8        20
+        H4 taker flow absorbed, fade (top/bottom 2%)       4     102     0.06     43.1         0.0087      0.1      -0.0913   -0.8         -9.3        12.3             3        20
+       H3b breakout with falling OI, fade (OI -0.5%)       8    1619     1.02     44.3         0.0725      2.1      -0.0275   -0.8        -44.5        77.9            10        18
+           H2 funding extreme, fade (top/bottom 10%)       4     930     0.53     42.3         0.0620      1.7      -0.0380   -1.1        -35.4        81.1             7        20
+       H3b breakout with falling OI, fade (OI -0.5%)       4    1708     1.08     45.8         0.0615      2.1      -0.0385   -1.3        -65.8       109.4             4        18
+        H4 taker flow absorbed, fade (top/bottom 5%)       8     356     0.20     37.6        -0.0035     -0.0      -0.1035   -1.5        -36.8        41.5             7        20
+         H3b breakout with falling OI, fade (OI -1%)       4    1085     0.69     44.8         0.0329      0.8      -0.0671   -1.7        -72.8        91.6             4        18
+  H1 liquidation flush, fade (move 0.35 ADR, OI -1%)       4     618     0.39     38.5        -0.0063     -0.1      -0.1063   -2.0        -65.7        80.7             4        18
+         H3b breakout with falling OI, fade (OI -1%)       8    1069     0.68     41.8        -0.0031     -0.1      -0.1031   -2.2       -110.2       126.3             6        18
+       H3 breakout with rising OI, follow (OI +0.5%)       8    1476     0.93     39.3         0.0099      0.3      -0.0901   -2.4       -133.0       139.5             4        18
+  H1 liquidation flush, fade (move 0.35 ADR, OI -1%)       8     618     0.39     35.1        -0.0560     -1.0      -0.1560   -2.7        -96.4       102.4             4        18
+        H4 taker flow absorbed, fade (top/bottom 5%)       4     373     0.21     37.3        -0.0444     -0.9      -0.1444   -2.8        -53.9        55.9             5        20
+       H3 breakout with rising OI, follow (OI +0.5%)       4    1517     0.96     38.4         0.0016      0.1      -0.0984   -3.1       -149.2       154.1             3        18
+H1 liquidation flush, fade (move 0.25 ADR, OI -0.5%)       8    1304     0.83     36.5        -0.0861     -2.4      -0.1861   -5.2       -242.6       245.6             2        18
+H1 liquidation flush, fade (move 0.25 ADR, OI -0.5%)       4    1311     0.83     39.0        -0.0702     -2.2      -0.1702   -5.4       -223.1       223.8             1        18
+```
